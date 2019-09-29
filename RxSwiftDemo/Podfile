@@ -1,0 +1,85 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'RxSwiftDemo' do
+
+
+
+ # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for InternetHospital
+
+
+# pod 'WMPlayer'
+
+#json 转模型
+ # pod 'MJExtension'
+
+# pod  'Masonry'
+
+
+#网络请求
+  pod 'Alamofire'
+  pod 'SwiftyJSON', '4.2.0'
+
+
+  pod 'Bugly'
+
+#弹框
+ # pod 'SVProgressHUD'
+
+#加密
+  pod 'CryptoSwift'
+  ##pod 'NotificationBannerSwift'
+
+#rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+#路由
+  pod 'DeepLinkKit'
+
+#键盘
+ # pod 'IQKeyboardManagerSwift'
+
+#布局
+ # pod 'Texture'
+  #pod 'ESTabBarController-swift'
+#
+  pod 'WechatOpenSDK'
+
+#云信
+  #pod 'NIMSDK'
+ # pod 'SDWebImage', '~> 4.4.6'
+ # pod 'Toast', '~> 3.0'
+  #pod 'M80AttributedLabel', '~> 1.6.3'
+
+#照片选择
+ # pod 'TZImagePickerController'
+
+  # Umeng common
+ # pod 'UMCCommon'
+ # pod 'UMCSecurityPlugins'
+
+  # Umeng share
+ # pod 'UMCShare/Social/ReducedWeChat'
+ # pod 'UMCShare/Social/ReducedQQ'
+ # pod 'UMCShare/Social/ReducedSina'
+
+  # Umeng analytics
+#  pod 'UMCAnalytics'
+
+  # AOP
+ # pod "Aspects"
+
+ # pod 'MJRefresh'
+ # pod 'DZNEmptyDataSet'
+  #pod "PromiseKit"
+  pod 'PromiseKit/Alamofire'
+  pod 'RxAlamofire'
+
+  #pod 'FSPagerView'
+  pod 'Wormholy', :configurations => ['Debug']
+
+end
