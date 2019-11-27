@@ -28,6 +28,21 @@ class IHLoginViewModel: NSObject {
         
         isLoginEnable = Driver.combineLatest(isLoading, isPhoneValid, isPasswordValid).map { !$0 && $1 && $2 }
         
+        userInput = event.asDriver(onErrorJustReturn: ())
+            .withLatestFrom(Driver.combineLatest(isPhoneValid, isPasswordValid))
+            .do(onNext: { (phoneValid, passwordValid) in
+                guard phoneValid else {
+                    //                    showDanger("请输入正确手机号")
+                    return
+                }
+                
+                guard passwordValid else {
+                    //                    showDanger("请输入6位数字密码")
+                    return
+                }
+            }).map { _ -> Void in }
+        
+        
         result = event.withLatestFrom(isLoginEnable).filter { $0 }
             .withLatestFrom(Driver.combineLatest(phone, password))
             .flatMapLatest({ (phone, password) -> Driver<Model<IHAccount>> in
@@ -36,19 +51,16 @@ class IHLoginViewModel: NSObject {
                     .asDriver(onErrorJustReturn: (nil, JSON()))
             })
         
-        userInput = event.asDriver(onErrorJustReturn: ())
-            .withLatestFrom(Driver.combineLatest(isPhoneValid, isPasswordValid))
-            .do(onNext: { (phoneValid, passwordValid) in
-                guard phoneValid else {
-//                    showDanger("请输入正确手机号")
-                    return
-                }
-                
-                guard passwordValid else {
-//                    showDanger("请输入6位数字密码")
-                    return
-                }
-            }).map { _ -> Void in }
+//        result = event.withLatestFrom(Driver.combineLatest(phone,password))
+//            .flatMapLatest({ (phone,password) -> Driver<Model<IHAccount>> in
+//
+//                return IHAccount.rx.login(phone: phone, password: password)
+//                .trackActivity(isLoading)
+//                .asDriver(onErrorJustReturn: (nil, JSON()))
+//
+//            })
+        
+
     }
     
    

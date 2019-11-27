@@ -31,11 +31,12 @@ extension Reactive where Base: DataRequest {
         return swiftyJSON().map { $0[keys] }
     }
     
-    func swiftyJSON() -> Observable<JSON> {//处理json
+    func swiftyJSON() -> Observable<JSON> {//处理responseData  Json
+        
         return responseData().map({ (_, data) -> JSON in
             
-            //            print(JSON(data))
-            
+            print("========Alamofire+Reactive=====swiftyJSON============")
+            print(JSON(data))
             print("========Alamofire+Reactive=====swiftyJSON============")
             
             return JSON(data)

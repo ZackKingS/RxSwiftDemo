@@ -91,8 +91,8 @@ class IHAccount:  Codable, ReactiveCompatible ,DictionaryValue{
 
 extension IHAccount {
     func loginNIM() {
-        if let account = netease_id?.string,
-            let token = netease_token?.string {
+//        if let account = netease_id?.string,
+//            let token = netease_token?.string {
 //            NIMSDK.shared().loginManager.login(account, token: token) { (error) in
 //                if let error = error {
 //                    print(error)
@@ -101,7 +101,7 @@ extension IHAccount {
 //
 //                }
 //            }
-        }
+//        }
     }
 }
 
@@ -181,6 +181,6 @@ extension Reactive where Base: IHAccount {
             })
     }
     
-    
+
     
 }

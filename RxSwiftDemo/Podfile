@@ -44,7 +44,7 @@ target 'RxSwiftDemo' do
  # pod 'IQKeyboardManagerSwift'
 
 #布局
- # pod 'Texture'
+  pod 'Texture' , '2.8.0'
   #pod 'ESTabBarController-swift'
 #
   pod 'WechatOpenSDK'
